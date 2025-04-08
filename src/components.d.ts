@@ -22,14 +22,14 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLChatbotComponentElement extends Components.ChatbotComponent, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLChatbotComponentElement: {
+        prototype: HTMLChatbotComponentElement;
+        new (): HTMLChatbotComponentElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "chatbot": HTMLChatbotComponentElement; //Component
     }
 }
 declare namespace LocalJSX {
@@ -48,14 +48,14 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "chatbot": MyComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "chatbot": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLChatbotComponentElement>; //Component
         }
     }
 }
