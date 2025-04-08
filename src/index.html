@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
 
+    <!-- Load the compiled Stencil component -->
     <script type="module" src="/build/chatbot.esm.js"></script>
     <script nomodule src="/build/chatbot.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>
+    <!-- Use the chatbot component with its properties -->
+    <app-chatbot
+      streamingData="true"
+      initialWidth="300px"
+      resizable="true"
+      position="bottom-right"
+      theme="light"
+      fontSize="14px"
+      apiKey="your-api-key"
+      delayTime="500"
+    ></app-chatbot>
   </body>
 </html>
