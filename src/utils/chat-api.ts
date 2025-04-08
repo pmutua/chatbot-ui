@@ -21,7 +21,7 @@ export const chatApi = {
   async sendMessage(message: string, apiKey: string): Promise<string> {
     // Simulate streaming by gradually revealing the message over time
     const dummyResponse = `This is a dummy response for: ${message}`;
-    
+  
     return new Promise((resolve) => {
       let index = 0;
       const interval = setInterval(() => {
@@ -30,7 +30,7 @@ export const chatApi = {
         
         // Log the current state of the message to simulate streaming
         console.log(currentText); // This logs each character or partial message
-
+        console.log(apiKey) //JUST FOR TESTING will refactor this section
         // Update the chat component state (optional, depending on your implementation)
         // You would use something like this.setState() or similar to update the UI
         // e.g. this.chatMessages = [...this.chatMessages, `Bot: ${currentText}`];
