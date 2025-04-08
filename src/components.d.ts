@@ -6,56 +6,52 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface AppChatbot {
+        "apiKey": string;
+        "bubbleStyle": { borderRadius: string, backgroundColor: string, color: string };
+        "delayTime": number;
+        "fontSize": string;
+        "initialWidth": string;
+        "position": 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+        "resizable": boolean;
+        "streamingData": boolean;
+        "theme": 'light' | 'dark';
+        "welcomeMessage": string;
     }
 }
 declare global {
-    interface HTMLChatbotComponentElement extends Components.ChatbotComponent, HTMLStencilElement {
+    interface HTMLAppChatbotElement extends Components.AppChatbot, HTMLStencilElement {
     }
-    var HTMLChatbotComponentElement: {
-        prototype: HTMLChatbotComponentElement;
-        new (): HTMLChatbotComponentElement;
+    var HTMLAppChatbotElement: {
+        prototype: HTMLAppChatbotElement;
+        new (): HTMLAppChatbotElement;
     };
     interface HTMLElementTagNameMap {
-        "chatbot": HTMLChatbotComponentElement; //Component
+        "app-chatbot": HTMLAppChatbotElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface AppChatbot {
+        "apiKey"?: string;
+        "bubbleStyle"?: { borderRadius: string, backgroundColor: string, color: string };
+        "delayTime"?: number;
+        "fontSize"?: string;
+        "initialWidth"?: string;
+        "position"?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';
+        "resizable"?: boolean;
+        "streamingData"?: boolean;
+        "theme"?: 'light' | 'dark';
+        "welcomeMessage"?: string;
     }
     interface IntrinsicElements {
-        "chatbot": MyComponent;
+        "app-chatbot": AppChatbot;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "chatbot": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLChatbotComponentElement>; //Component
+            "app-chatbot": LocalJSX.AppChatbot & JSXBase.HTMLAttributes<HTMLAppChatbotElement>;
         }
     }
 }
