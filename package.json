@@ -1,5 +1,5 @@
 {
-  "name": "chatbot",
+  "name": "chatbot-ui",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -29,7 +29,10 @@
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "angular-output/",
+    "react-output/",
+    "vue-output/"
   ],
   "scripts": {
     "build": "stencil build",
@@ -39,7 +42,10 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
+    "@stencil/angular-output-target": "^0.10.2",
     "@stencil/core": "^4.27.1",
+    "@stencil/react-output-target": "^1.0.2",
+    "@stencil/vue-output-target": "^0.10.7",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.5",
     "jest": "^29.7.0",
