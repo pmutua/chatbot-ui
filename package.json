@@ -29,7 +29,10 @@
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "angular-output/",
+    "react-output/",
+    "vue-output/"
   ],
   "scripts": {
     "build": "stencil build",

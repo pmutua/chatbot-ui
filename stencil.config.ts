@@ -1,7 +1,11 @@
 import { Config } from '@stencil/core';
+import { angularOutputTarget } from '@stencil/angular-output-target';
+import { reactOutputTarget } from '@stencil/react-output-target';
+import { vueOutputTarget } from '@stencil/vue-output-target';
+import { OutputTargetCustom } from '@stencil/core/internal';
 
 export const config: Config = {
-  namespace: 'chatbot',
+  namespace: 'chatbot-ui',
   outputTargets: [
     {
       type: 'dist',
@@ -21,21 +25,20 @@ export const config: Config = {
     },
     /** Angular wrapper */
     angularOutputTarget({
-      componentCorePackage: '@your-org/component-lib',
-      directivesProxyFile: '../angular-output/component-lib-angular/src/generated/proxies.ts',
-      directivesArrayFile: '../angular-output/component-lib-angular/src/generated/index.ts',
+      componentCorePackage: 'chatbot-ui',
+      directivesProxyFile: './angular-output/chatbot-ui-lib-angular/src/generated/proxies.ts',
+      directivesArrayFile: './angular-output/chatbot-ui-lib-angular/src/generated/index.ts',
     }) as OutputTargetCustom,
-
     /** React wrapper */
     reactOutputTarget({
-      componentCorePackage: '@your-org/component-lib',
-      proxiesFile: '../react-output/component-lib-react/src/components.ts',
+      stencilPackageName: 'chatbot-ui',
+      outDir: './react-output/chatbot-ui-lib-react/src/components.ts',
     }) as OutputTargetCustom,
 
     /** Vue wrapper */
     vueOutputTarget({
-      componentCorePackage: '@your-org/component-lib',
-      proxiesFile: '../vue-output/component-lib-vue/src/components.ts',
+      componentCorePackage: 'chatbot-ui',
+      proxiesFile: './vue-output/chatbot-ui-lib-vue/src/components.ts',
     }) as OutputTargetCustom,
   ],
   testing: {
